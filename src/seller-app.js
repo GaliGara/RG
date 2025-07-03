@@ -14,6 +14,10 @@ export class SellerApp extends LitElement {
         this.step = false;
     }
 
+    createRenderRoot(){
+        return this;
+    }
+    
     render() {
         return html`
         <seller-form></seller-form>
