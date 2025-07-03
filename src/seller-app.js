@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.skypack.dev/lit';
-import "../components/seller-form"
+import "/components/seller-form"
 
 export class SellerApp extends LitElement {
 

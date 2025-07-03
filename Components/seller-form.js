@@ -1,23 +1,36 @@
 import { LitElement, html } from 'https://cdn.skypack.dev/lit';  
-import { Grid } from 'https://unpkg.com/gridjs?module';
+import './grid-table.js'
 
 
 export class SellerForm extends LitElement {
 
     static get properties() {
         return {
-            sellers: { type: Array },
+            configSell: { type: Object },
         };
     }
     
     constructor(){
         super();
-        this.sellers = [];
+        this.configSell = {};
     }
 
+
     render() {
+
+        const configSell = {
+            columns: ['Sucursal', 'Tipo de pago'],
+            data: [
+                ['Mitikah', 'Transferencia'],
+                ['Delta', 'Efectivo']
+            ],
+            search: true,
+            pagination: { limit: 3}
+        };
+
         return html`
-        <h1>Sellers</h1>
+          <h2>Usuarios</h2>
+          <grid-table .config=${configSell}></grid-table>
         `;
     }
 }
