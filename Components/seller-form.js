@@ -74,15 +74,14 @@ export class SellerForm extends LitElement {
                                     <option>Enrique</option>
                                 </select>
                         </div>        
-                        <div class="col-span-1">     
-                            <label class="block text-sm font-medium mb-1">Venta</label>   
-    
+                        <div class="col-span-1">      
+                            <!-- <label class="block text-sm font-medium mb-1">Venta</label>  -->
                                 <input
                                 id="ventas"
-                                placeholder="$$$"
+                                placeholder="Venta"
                                 type="number"
                                 step=".01"
-                                class="w-full border col-span-3 border-gray-300 rounded-md text-right"
+                                class="mt-6 w-full border col-span-3 border-gray-300 rounded-md text-right"
                                 >
 
                         </div>
@@ -99,14 +98,14 @@ export class SellerForm extends LitElement {
                                 </select>
                         </div>        
                         <div class="col-span-1">     
-                            <label class="block text-sm font-medium mb-1">Cantidad</label>   
+                            <!-- <label class="block text-sm font-medium mb-1">Cantidad</label>    -->
     
                                 <input
                                 id="ventas"
-                                placeholder="$$$"
+                                placeholder="Cantidad"
                                 type="number"
                                 step=".01"
-                                class="w-full border col-span-3 border-gray-300 rounded-md text-right"
+                                class="w-full mt-5 border col-span-3 border-gray-300 rounded-md text-right"
                                 >
 
                         </div>
