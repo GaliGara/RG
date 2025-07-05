@@ -105,7 +105,7 @@ export class SellerForm extends LitElement {
                                 placeholder="Cantidad"
                                 type="number"
                                 step=".01"
-                                class="w-full mt-5 border col-span-3 border-gray-300 rounded-md text-right"
+                                class="w-full mt-6 border col-span-3 border-gray-300 rounded-md text-right"
                                 >
 
                         </div>

@@ -1,5 +1,6 @@
 import { LitElement, html } from 'https://cdn.skypack.dev/lit';
 import "/components/seller-form"
+import "/components/employer-form"
 
 export class SellerApp extends LitElement {
 
@@ -20,7 +21,8 @@ export class SellerApp extends LitElement {
     
     render() {
         return html`
-        <seller-form></seller-form>
+        <!-- <seller-form></seller-form> -->
+        <employer-form></employer-form>
         `;
     }
 }
