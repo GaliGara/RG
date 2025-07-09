@@ -6,16 +6,33 @@ export class EmployerForm extends LitElement{
     static get properties(){
         return{
             employer: {type: Array},
+            nombre: {type: String},
+            apellidoPaterno: {type: String},
+            apellidoMaterno: {type: String},
         }
     }
 
     constructor(){
         super();
         this.employer = [];
+        this.nombre = '';
+        this.apellidoMaterno = '';
+        this.apellidoPaterno = '';
     }
 
     createRenderRoot(){
         return this;
+    }
+
+    handleFullName(e){
+        const campo = e.target.name
+        const valor = e.target.value.trim();
+        this[campo] = valor;
+        this.requestUpdate();
+    }
+
+    get nombreCompleto(){
+        return [this.nombre, this.apellidoPaterno, this.apellidoMaterno].filter(Boolean).join(' ')
     }
 
     render() {
@@ -31,12 +48,24 @@ export class EmployerForm extends LitElement{
                 <form>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
+                        <div class="col-span-2">
+                            <label class="block text-sm font-medium mb-2">Nombre Completo:</label>
+                            <input
+                            type="text" 
+                            name="nombreCompleto"
+                            class="border w-full border-gray-300 rounded-md"
+                            .value=${this.nombreCompleto}
+                            >
+
+                        </div>
                         <div>
                             <label class="block text-sm font-medium mb-1">Nombres:</label>
                             <input
                             type="text" 
-                            name="nombre"
                             class="border w-full border-gray-300 rounded-md"
+                            name="nombre"
+                            .value=${this.nombre}
+                            @input=${this.handleFullName}
                             >
 
                         </div>
@@ -44,8 +73,10 @@ export class EmployerForm extends LitElement{
                             <label class="block text-sm font-medium mb-1">Apellido Paterno:</label>
                             <input
                             type="text" 
-                            name="paterno"
                             class="border w-full border-gray-300 rounded-md"
+                            name="apellidoPaterno"
+                            .value=${this.apellidoPaterno}
+                            @input=${this.handleFullName}
                             >
                         </div>
                         <div class="col-span-1">
@@ -53,8 +84,10 @@ export class EmployerForm extends LitElement{
                             
                             <input
                             type="text" 
-                            name="materno"
                             class="border w-full border-gray-300 rounded-md"
+                            name="apellidoMaterno"
+                            .value=${this.apellidoMaterno}
+                            @input=${this.handleFullName}
                             >
                         </div>        
                         <div class="col-span-1">      
