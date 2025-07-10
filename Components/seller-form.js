@@ -22,10 +22,11 @@ export class SellerForm extends LitElement {
     render() {
 
         const configSell = {
-            columns: ['Sucursal', 'Tipo de pago'],
+            columns: ['ID', 'Fecha', 'Sucursal','Vendedor', 'Tipo de Pago', 'Notas', 'Total Ventas', 'Acciones'],
             data: [
-                ['Mitikah', 'Transferencia'],
-                ['Delta', 'Efectivo']
+                ['1', '25-02-25', 'Mitika', 'Enrique', 'Transferencia', 'Notas', '$100', 'btn'],
+                ['1', '31-11-25', 'Delta', 'Emanuel', 'Efectivo', 'Notas2', '$200', 'btn'],
+                ['1', '19-06-25', 'Opatra', 'Brandon', 'Deposito', 'Notas3', '$300', 'btn'],
             ],
             search: true,
             pagination: { limit: 3}
@@ -139,7 +140,7 @@ export class SellerForm extends LitElement {
                 </form>
             </div>
         </div>
-          <!-- <grid-table .config=${configSell}></grid-table> -->
+          <grid-table .config=${configSell}></grid-table>
         `;
     }
 }

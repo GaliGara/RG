@@ -9,6 +9,7 @@ export class EmployerForm extends LitElement{
             nombre: {type: String},
             apellidoPaterno: {type: String},
             apellidoMaterno: {type: String},
+            configEmployers: {type: Object},
         }
     }
 
@@ -18,6 +19,7 @@ export class EmployerForm extends LitElement{
         this.nombre = '';
         this.apellidoMaterno = '';
         this.apellidoPaterno = '';
+        this.configEmployers = {};      
     }
 
     createRenderRoot(){
@@ -36,6 +38,18 @@ export class EmployerForm extends LitElement{
     }
 
     render() {
+
+                const configEmployers = {
+            columns: ['ID', 'Nombre Completo', 'Apellido Paterno','Apellido Materno', 'Nombres', 'Banco', 'Numero de Cuenta', 'Puesto', 'Acciones'],
+            data: [
+                ['1', 'Enrique Galicia Garatachia', 'Galicia', 'Garatachia', 'Enrique', 'BBVA', 'xxx xxx x33','Vendedor', 'btn'],
+                ['2', 'Emanuel Rangel', 'Rangel', 'No.', 'Emanuel', 'Santander', 'xxx xxx x12', 'Director', 'btn'],
+                ['3', 'Brandon Galicia Garatachia', 'Galicia', 'Garatachia', 'Brandon', 'Azteca', 'xxx xxx x99', 'Cosmetologa', 'btn'],
+            ],
+            search: true,
+            pagination: { limit: 3}
+        };
+
         return html`
         <div
         id="card-sell"
@@ -143,6 +157,7 @@ export class EmployerForm extends LitElement{
                 </form>
             </div>
         </div>
+        <grid-table .config=${configEmployers}></grid-table>
         `;
     }
 }

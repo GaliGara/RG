@@ -1,10 +1,12 @@
 import {LitElement, html} from 'https://cdn.skypack.dev/lit';
+import "./grid-table"
 
 export class BranchForm extends LitElement {
 
     static get properties(){
         return{
             branchNames: {type: Array},
+            configBranch: {type: Object},
             
         }
     }
@@ -12,6 +14,7 @@ export class BranchForm extends LitElement {
     constructor(){
         super();
         this.branchNames = []; 
+        this.configBranch = {};
     }
 
     createRenderRoot(){
@@ -19,6 +22,17 @@ export class BranchForm extends LitElement {
     }
 
     render(){
+                const configBranch = {
+            columns: ['ID', 'Sucursal', 'Acciones'],
+            data: [
+                ['1', 'Mitika', 'btn'],
+                ['2', 'Delta', 'btn'],
+                ['3', 'Zona', 'btn'],
+            ],
+            search: true,
+            pagination: { limit: 3}
+        };
+
         return html`
 
         <div
@@ -41,7 +55,7 @@ export class BranchForm extends LitElement {
                             >
 
                         </div>
-
+                    </div>  
                     <!-- Buttons -->
                      <div class="flex justify-end gap-2 pt-2">
                         <button 
@@ -55,10 +69,11 @@ export class BranchForm extends LitElement {
                             Agregar
                         </button>
                      </div>
-
                 </form>
             </div>
         </div>
+        
+         <grid-table .config=${configBranch}></grid-table>
         `;
     }
 }
