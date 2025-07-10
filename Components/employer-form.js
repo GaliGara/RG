@@ -55,6 +55,7 @@ export class EmployerForm extends LitElement{
                             name="nombreCompleto"
                             class="border w-full border-gray-300 rounded-md"
                             .value=${this.nombreCompleto}
+                            readonly
                             >
 
                         </div>
