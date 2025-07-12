@@ -1,5 +1,5 @@
 import { LitElement, html } from "https://cdn.skypack.dev/lit";
-import "./grid-table.js";
+import "../components/grid-table"
 
 export class SellerForm extends LitElement {
   static get properties() {

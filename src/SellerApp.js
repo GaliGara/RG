@@ -22,8 +22,8 @@ export class SellerApp extends LitElement {
   render() {
     return html`
       <!-- <seller-form></seller-form> -->
-      <!-- <employer-form></employer-form> -->
-      <branch-form></branch-form>
+      <employer-form></employer-form>
+      <!-- <branch-form></branch-form> -->
     `;
   }
 }

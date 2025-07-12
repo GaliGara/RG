@@ -1,5 +1,5 @@
 import { LitElement, html } from "https://cdn.skypack.dev/lit";
-import "./grid-table";
+import "./grid-table.js"
 
 export class BranchForm extends LitElement {
   static get properties() {
